@@ -26,7 +26,7 @@ _get_empty_snapshots() {
 		awk ' $2 == "0" { print $1 }'
 }
 
-
+## This SEPARATOR is required for test purposes. Please don’t remove! ##
 
 if [ -z "$1" ]; then
 	echo "$USAGE" >&2
