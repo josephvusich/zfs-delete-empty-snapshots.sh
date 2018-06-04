@@ -1,42 +1,24 @@
-[![Build Status](https://travis-ci.org/Josef-Friedrich/zfs-delete-emtpy-snapshots.sh.svg?branch=master)](https://travis-ci.org/Josef-Friedrich/zfs-delete-emtpy-snapshots.sh)
+[![Build Status](https://travis-ci.org/Josef-Friedrich/zfs-delete-empty-snapshots.sh.svg?branch=master)](https://travis-ci.org/Josef-Friedrich/zfs-delete-empty-snapshots.sh)
 
-# zfs-delete-emtpy-snapshots.sh
+# zfs-delete-empty-snapshots.sh
 
 
 ## Summary / Short description
 
-> This is the management script of the skeleton.sh project!
+> Delete empty ZFS snapshots in a secure manner.
 
 ## Usage
 
 ```
-skeleton.sh v1.0
+Usage: zfs-delete-empty-snapshots.sh <dataset>
 
-Usage: skeleton.sh [-AdhrSstv]
-
-This is the management script of the skeleton.sh project!
-
-Options:
-	-A, --sync-all
-	  Sync all projects that have the same parent folder as this
-	  project.
-	-d, --sync-dependencies
-	  Sync external dependenices (e. g. test-helper.sh bats)
-	-h, --help
-	  Show this help message
-	-r, --render-readme
-	  Render “README.md”.
-	-S, -sync-skeleton
-	  Sync your project with the skeleton project and update some
-	  boilerplate files (e. g. Makefile test/lib/skeleton.sh)
-	-s, --short-description
-	  Show a short description / summary
-	-t, --test
-	  Run the tests located in the “test” folder.
-	-v, --version
-	  Show the version number of this script.
+Delete empty ZFS snapshots in a secure manner.
 
 ```
+
+## Project pages
+
+* https://github.com/Josef-Friedrich/zfs-delete-empty-snapshots.sh
 
 ## Testing
 
