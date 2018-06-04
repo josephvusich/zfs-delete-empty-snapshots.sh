@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/JosefFriedrich-shell/zfs-delete-emtpy-snapshots.sh.svg?branch=master)](https://travis-ci.org/JosefFriedrich-shell/zfs-delete-emtpy-snapshots.sh)
+[![Build Status](https://travis-ci.org/Josef-Friedrich/zfs-delete-emtpy-snapshots.sh.svg?branch=master)](https://travis-ci.org/Josef-Friedrich/zfs-delete-emtpy-snapshots.sh)
 
 # zfs-delete-emtpy-snapshots.sh
 
