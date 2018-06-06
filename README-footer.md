@@ -1,6 +1,4 @@
-
-
-
+# To destroy empty zfs snapshots in a secure manner
 
 ```sh
 zfs create export/test

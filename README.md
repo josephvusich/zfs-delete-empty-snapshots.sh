@@ -26,9 +26,7 @@ Delete empty ZFS snapshots in a secure manner.
 make test
 ```
 
-
-
-
+# To destroy empty zfs snapshots in a secure manner
 
 ```sh
 zfs create export/test
