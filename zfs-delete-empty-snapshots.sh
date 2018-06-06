@@ -21,7 +21,8 @@ _get_datasets() {
 }
 
 _get_empty_snapshots() {
-	zfs list -Hr -d1 -t snapshot -o name,used -s creation "$1" | \
+	# -p  Display numbers in parsable (exact) values.
+	zfs list -Hr -p -d1 -t snapshot -o name,used -s creation "$1" | \
 		sed '$d' | \
 		awk ' $2 == "0" { print $1 }'
 }
@@ -39,7 +40,8 @@ for DATASET in $DATASETS ; do
 	SNAPSHOTS=$(_get_empty_snapshots "$DATASET")
 	for SNAPSHOT in $SNAPSHOTS ; do
 		# See https://www.mail-archive.com/zfs-discuss@opensolaris.org/msg17752.html"
-		USED=$(zfs list -H -o used "$SNAPSHOT")
+		# -p  Display numbers in parsable (exact) values.
+		USED=$(zfs list -H -p -o used "$SNAPSHOT")
 		if [ "$USED" = "0" ]; then
 			echo "Destroying empty snapshot “$SNAPSHOT”! (USED=$USED)"
 			zfs destroy "$SNAPSHOT"
