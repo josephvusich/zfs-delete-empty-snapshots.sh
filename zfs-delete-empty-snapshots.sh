@@ -14,7 +14,7 @@ $SHORT_DESCRIPTION
 "
 
 _get_datasets() {
-	zfs list -Hr -t snapshot "$1" | \
+	zfs list -H -r -p -t snapshot "$1" | \
 		grep '@' | \
 		cut -d '@' -f 1 | \
 		uniq
