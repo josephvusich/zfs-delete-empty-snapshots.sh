@@ -22,7 +22,7 @@ _get_datasets() {
 
 _get_empty_snapshots() {
 	# -p  Display numbers in parsable (exact) values.
-	zfs list -Hr -p -d1 -t snapshot -o name,used -s creation "$1" | \
+	zfs list -H -r -p -d1 -t snapshot -o name,used -s creation "$1" | \
 		sed '$d' | \
 		awk ' $2 == "0" { print $1 }'
 }

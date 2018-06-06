@@ -1,8 +1,10 @@
 #! /bin/sh
 
-# zfs list -H -r -p -t snapshot "data/backup"
+case $@ in
 
-echo "data/backup@zfs-auto-snap_monthly-2017-09-11-0756	119040	-	273792	-
+	# zfs list -H -r -p -t snapshot data/backup
+	'list -H -r -p -t snapshot data/backup')
+		echo 'data/backup@zfs-auto-snap_monthly-2017-09-11-0756	119040	-	273792	-
 data/backup@zfs-auto-snap_monthly-2018-01-07-1613	95232	-	273792	-
 data/backup@zfs-auto-snap_monthly-2018-01-07-1916	95232	-	273792	-
 data/backup@zfs-auto-snap_monthly-2018-01-31-2300	119040	-	273792	-
@@ -40,16 +42,13 @@ data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-06-1605	0	-	142848	-
 data/backup/host/fractal@zfs-auto-snap_daily-2018-06-06-1605	0	-	142848	-
 data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1605	0	-	142848	-
 data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1615	0	-	142848	-
-data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1810	0	-	142848	-
-"
+data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1810	0	-	142848	-'
+		exit 0
+		;;
 
-exit 0
-
-
-
-# zfs list -H -r -p -d1 -t snapshot -o name,used -s creation "data/backup"
-
-data/backup@zfs-auto-snap_monthly-2018-01-07-1916	95232
+	# zfs list -H -r -p -d1 -t snapshot -o name,used -s creation "data/backup"
+	'list -H -r -p -d1 -t snapshot -o name,used -s creation data/backup')
+		echo 'data/backup@zfs-auto-snap_monthly-2018-01-07-1916	95232
 data/backup@zfs-auto-snap_monthly-2018-01-31-2300	119040
 data/backup@zfs-auto-snap_monthly-2018-03-01-1007	119040
 data/backup@zfs-auto-snap_monthly-2018-04-02-1152	119040
@@ -64,7 +63,32 @@ data/backup@zfs-auto-snap_weekly-2018-04-30-2134	0
 data/backup@zfs-auto-snap_daily-2018-04-30-2200	0
 data/backup@zfs-auto-snap_monthly-2018-04-30-2200	0
 data/backup@zfs-auto-snap_daily-2018-05-02-2122	0
-data/backup@zfs-auto-snap_daily-2018-05-02-2200	0
+data/backup@zfs-auto-snap_daily-2018-05-02-2200	0'
+		exit 0
+		;;
+
+	'list -H -r -p -d1 -t snapshot -o name,used -s creation data/backup/host/fractal')
+		echo 'data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-04-2013	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-04-2100	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_daily-2018-06-04-2200	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-04-2200	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-04-2300	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-05-0707	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-05-2029	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-05-2100	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_hourly-2018-06-06-1605	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_daily-2018-06-06-1605	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1605	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1615	0	-	142848	-
+data/backup/host/fractal@zfs-auto-snap_frequent-2018-06-06-1810	0	-	142848	-'
+		exit 0
+		;;
 
 
-# zfs list -H -p -o used  data/backup@zfs-auto-snap_daily-2018-05-02-2200
+	# zfs list -H -p -o used data/backup@zfs-auto-snap_daily-2018-05-02-2200
+	'list -H -p -o used data/backup@zfs-auto-snap_daily-2018-05-02-2200')
+		echo '0'
+		exit 0
+		;;
+
+esac
