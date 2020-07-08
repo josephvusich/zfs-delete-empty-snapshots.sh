@@ -43,7 +43,7 @@ for DATASET in $DATASETS ; do
 		# -p  Display numbers in parsable (exact) values.
 		USED=$(zfs list -H -p -o used "$SNAPSHOT")
 		if [ "$USED" = "0" ]; then
-			echo "Destroying empty snapshot “$SNAPSHOT”! (USED=$USED)"
+			echo "Destroying empty snapshot \"$SNAPSHOT\"! (USED=$USED)"
 			zfs destroy "$SNAPSHOT"
 		fi
 	done
